@@ -1,0 +1,13 @@
+subscription-id              = "***********************************"
+client-id                    = "***********************************"
+client-secret                = "***********************************"
+tenant-id                    = "***********************************"
+test-rg                      = "test-rg"
+vnet-location                = "uksouth"
+vnet-name                    = "vnet-flec-qa-new"
+vnet-address-space           = ["192.168.0.0/18"]
+subnet1-name              = "subnet1"
+subnet2-name          = "subnet2"
+subnet1-address-space     = ["192.168.0.0/20"]
+subnet2-address-space = ["192.168.16.0/26"]
+nsg-name                = "nsg-test"
