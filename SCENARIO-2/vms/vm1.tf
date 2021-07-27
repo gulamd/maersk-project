@@ -17,33 +17,33 @@ data "azurerm_subnet" "subnet1" {
 }
 
 resource "azurerm_public_ip" "bastion-pubip" {
-    name                         = "${var.bastion-pubip-name}"
-    location                     = "${var.flecqa-location}"
+    name                         = "${var.test-pubip-name}"
+    location                     = "${var.test-location}"
     resource_group_name          = data.azurerm_resource_group.test-rg.name
     allocation_method            = "Dynamic"
 }
 
 resource "azurerm_network_interface" "test-bastion-nic" {
-    name                      = "${var.bastion-nic-name}"
-    location                  = azurerm_public_ip.bastion-pubip.location
+    name                      = "${var.test-nic-name}"
+    location                  = azurerm_public_ip.test-pubip.location
     resource_group_name       = data.azurerm_resource_group.test-rg.name
 
     ip_configuration {
-        name                          = "${var.test-bastion-ip-name}"
+        name                          = "${var.test-ip-name}"
         subnet_id                     = data.azurerm_subnet.subnet1.id
         private_ip_address_allocation = "Dynamic"
         public_ip_address_id          = azurerm_public_ip.bastion-pubip.id
     }
 }
-resource "azurerm_linux_virtual_machine" "bastion-vm" {
-    name                  = "${var.bastion-vm-name}"
-    location              =  azurerm_public_ip.bastion-pubip.location
-    resource_group_name   = azurerm_public_ip.bastion-pubip.resource_group_name
-    network_interface_ids = [azurerm_network_interface.flecqa-bastion-nic.id]
+resource "azurerm_linux_virtual_machine" "test-vm" {
+    name                  = "${var.test-vm-name}"
+    location              =  azurerm_public_ip.test-pubip.location
+    resource_group_name   = azurerm_public_ip.test-pubip.resource_group_name
+    network_interface_ids = [azurerm_network_interface.test-nic.id]
     size                  = "Standard_B2s"
 
     os_disk {
-        name                 = "${var.bastion-vmdisk-name}"
+        name                 = "${var.test-vmdisk-name}"
         caching              = "ReadWrite"
         storage_account_type = "Standard_LRS"
     }
