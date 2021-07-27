@@ -1,0 +1,12 @@
+subscription-id              = "************************************"
+client-id                    = "************************************"
+client-secret                = "************************************"
+tenant-id                    = "************************************"
+test-pubip-name           = "test-pubip"
+test-location              = "uksouth"
+test-nic-name             = "test-nic"
+test-ip-name       = "test-pvtip"
+test-vm-name              = "linuxvm"
+test-vmdisk-name          = "test-vmdisk"
+test-username             = "adminuser"
+
