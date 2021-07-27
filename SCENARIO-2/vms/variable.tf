@@ -6,17 +6,17 @@ variable "client-secret" {
 }
 variable "tenant-id" {
 }
-variable "bastion-pubip-name" {
+variable "test-pubip-name" {
 }
-variable "flecqa-location" {
+variable "test-location" {
 }
-variable "bastion-nic-name" {
+variable "test-nic-name" {
 }
-variable "flecqa-bastion-ip-name" {
+variable "test-ip-name" {
 }
-variable "bastion-vm-name" {
+variable "test-vm-name" {
 }
-variable "bastion-vmdisk-name" {
+variable "test-vmdisk-name" {
 }
-variable "bastion-username" {
+variable "test-username" {
 }
